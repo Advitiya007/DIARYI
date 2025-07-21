@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%-include("./partials/head")  %>
+</head>
+<body>
+ <%-include("./partials/nav")  %>  
+ <%= JSON.stringify(user) %>  
+
+ <!-- <% if(locals.newblog){ %>
+
+    <h1><%=  newblog.title%>  </h1>
+    <p><%= newblog.blogbody  %></p>
+    <% } %> -->
+
+    <div class="cont mt-3px">
+        <div class="d-flex flex-wrap gap-3">
+        <% allblogs.forEach(blog =>  { %>
+<div class="card" style="width: 18rem; height: 200px; ">
+  <img src="<%= blog.coverimage %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=blog.title %></h5>
+    <p class="card-text overflow-hidden"><%=blog.blogbody %></p>
+    <a href="/blog/<%= blog._id %>" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>      
+  <%  }); %>
+</div>
+      
+    </div>
+</body>
+ <%-include("./partials/scripts")  %>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%-include("./partials/head")  %>
+</head>
+<body>
+ <%-include("./partials/nav")  %>  
+ 
+ <!-- <%= JSON.stringify(user) %>   -->
+  <div class="container mt-20px" >
+    <h1>AUTHOR <%= user.name %></h1>
+    <!-- <form action="/blog/addblog" method="post"> -->
+        <form action="/blog/addblog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+  <label for="formFile" class="form-label">Default file input example</label>
+  <input class="form-control" type="file" id="formFile" name="coverimage">
+</div>
+    <label >TITLE </label>
+<input type="text" name="title" id="">
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="blogbody"></textarea>
+</div>
+<button type="submit">EDIT  </button>
+<button type="submit">SUBMIT BLOG </button>
+</form>
+  </div>
+</body>
+ <%-include("./partials/scripts")  %>
+
+</html>

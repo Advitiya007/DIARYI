@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%-include("./partials/head")  %>
+ <title>BLOG</title>
+</head>
+<body>
+ <%-include("./partials/nav")  %>  
+
+ <%= JSON.stringify(user) %>  
+
+    THIS IS THE SUBMITTED BLOGs:
+    <h1>BY AUTHOR : <%= user.name %> </h1>
+        <div class="cont mt-3px">
+        <% userblogs.forEach(blog =>  { %>
+        <div class="card" style="width: 18rem;">
+  <img src="<%= blog.coverimage %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=blog.title %></h5>
+    <p class="card-text"><%=blog.blogbody %></p>
+    <a href="/blog/<%= blog._id %>" class="btn btn-primary">CHECK OUT THIS BLOG </a>
+  </div>
+</div>      
+      <%  }); %>
+      
+    </div>
+    
+</body>
+ <%-include("./partials/scripts")  %>
+
+</html>
